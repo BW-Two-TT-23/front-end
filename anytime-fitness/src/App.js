@@ -5,11 +5,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import SignUp from './components/SignUp'
 import Login from './components/Login'
 import Buttons from './components/Buttons'
+import logo from './images/logo1.png'
 
 function App() {
   return (
     <div className='App'>
       <div className="rowC">
+      <img src={logo} className="logo" alt="Logo" />
       <a href="#"><Buttons name='Home' /></a>
 <a href="#"><Buttons name='About' /></a>
     <a href="#"><Buttons name='Calculators' /></a>

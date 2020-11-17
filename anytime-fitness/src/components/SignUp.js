@@ -49,7 +49,7 @@ const StyledSignUp = styled.div`
     form{
         dislay: flex;
         flex-direction: column;
-        border: .1rem solid #008037;
+        margin-left: -10rem;
        
     }
 

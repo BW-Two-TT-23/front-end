@@ -7,14 +7,37 @@
 } */
 
 .main{
-  dispay: flex;
+  display: flex;
   justify-content: center;
+  align-items: center;
   margin: auto;
   background: antiquewhite;
   
 }
 .App {
   text-align: center;
+}
+.topMargin{
+  margin-top: 5rem;
+  justify-content: center;
+  text-align: center ;
+}
+.teamPhoto{
+ 
+  border-radius: 100%;
+  
+  height: 10rem;
+  align-items: center;
+  justify-content: center;
+}
+.teamPhotoBar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+
+ 
+ 
 }
 
 .formWrap{

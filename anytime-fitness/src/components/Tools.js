@@ -12,11 +12,31 @@ function Tools(){
         <div className='rowC'>
         <h1>Tools to help</h1>
         </div>
-        <div><img src={numbers} className="formImage" alt="a heart and the words your numbers" /></div>
+        <div className='rowC'>
+            <img src={numbers} className="formImage" alt="a heart and the words your numbers" />
         <form>
-            <input></input>
-        </form>
+            <h2>Calculate your BMI</h2>
+            
+            <div>
+                
+            <input type='text'
+            placeholder="weight"></input>
+            
+            </div>
+            <div>
+            
+            <input type='text'
+            placeholder="height">
+        
+            </input>
+            <div>
+                <button>Calculate</button>
+            </div>
+            <h2>Your BMI is: </h2>
+            </div>
 
+        </form>
+        </div>
     </div>
     
     );

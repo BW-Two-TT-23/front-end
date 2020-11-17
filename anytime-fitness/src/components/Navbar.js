@@ -12,12 +12,12 @@ const Navbar = () => {
     >
       <div className="navi">
        <img src={logo} className="logo" alt="Logo" />
-        <NavLink to = './Home'>Home</NavLink>
+        <NavLink to = './Home'>Home  </NavLink>
       
-      	<NavLink to = './About'>About</NavLink>
-        <NavLink to = './SignUp'>Sign Up</NavLink>
-        <NavLink to = './Login'>Login</NavLink>
-        <NavLink to = './Tools'> Tools</NavLink>
+      	<NavLink to = './About'>About    </NavLink>
+        <NavLink to = './SignUp'>Sign Up    </NavLink>
+        <NavLink to = './Login'>Login    </NavLink>
+        <NavLink to = './Tools'> Tools    </NavLink>
         
       </div>
     </nav>

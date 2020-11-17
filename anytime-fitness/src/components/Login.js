@@ -18,7 +18,7 @@ const StyledLogin = styled.div`
         margin: 2% auto;
         text-align: center;
         padding: 0.8%;
-        border: 3px solid #008037;
+       
     }
 
     h2{
@@ -33,7 +33,7 @@ const StyledLogin = styled.div`
         text-align: center;
         padding: 1%;
         margin-bottom: 2%;
-        border: 3px solid #008037;
+        border: 1.rem solid #008037;
         font-weight: bold;
     }
     .container{
@@ -42,8 +42,21 @@ const StyledLogin = styled.div`
         padding: 2%;
         height: 100vh;
         justify-content: center;
-        border: 1px solid black;
+       
 
+    }
+
+    form{
+        dislay: flex;
+        flex-direction: column;
+        border: .1rem solid #008037;
+       
+    }
+
+    .lable-top{
+        align-text: center;
+        margin: auto;
+    
     }
 `
 
@@ -71,12 +84,14 @@ const Login = () => {
     return(
         <div>
             <Navbar/>
-
+            <div className='form'></div>
         <StyledLogin>
             
             <div className="container">
-                <h2>Login</h2>
+                
+                
                 <form onSubmit={submitHandler}>
+                <div className='lable-top'><h2>Login</h2></div>
                     <input 
                         type="text"
                         name="username"

@@ -16,7 +16,11 @@ function Home(){
             <h1>Welcome to AnyTime Fitness</h1>
             <p>Welcome!</p>
             <p>We're glad you're here.</p>
-            <p>The world is a little crazy right now, but you can still take good care of yourself.</p> <p>Register for a class today!</p>
+            <p>The world is a little crazy right now,</p>
+                
+            <p>but you can still take good care of yourself.</p> 
+            
+            <p>Register for a class today!</p>
             </div>
 
         <div className="photosMainLeft">

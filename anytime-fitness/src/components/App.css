@@ -39,17 +39,22 @@
  
  
 }
+.navi{
+
+margin-right: .5rem;
+padding-right: .5rem;
+}
 
 .homeText1{
   display: flex;
-  flex-drection: row;
+  flex-direction: row;
   text-align: center;
   margin-top: 3rem;
 }
 
 .homeMain{
   display: flex;
-  flex-drection: row;
+  flex-direction: row;
   text-align: center;
   margin-top: 3rem;
 

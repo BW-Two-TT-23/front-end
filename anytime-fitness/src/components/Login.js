@@ -106,7 +106,7 @@ const Login = () => {
                         type="text"
                         name="username"
                         value={formValue.username}
-                        placeholder="username"
+                        placeholder="email address"
                         onChange={changeHandler}
                     />
 

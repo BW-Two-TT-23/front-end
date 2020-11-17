@@ -2,6 +2,7 @@ import react, { useState } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 import Navbar from './Navbar'
+import imageS from '../images/signup.png'
 
 const StyledSignUp = styled.div`
     form{
@@ -83,10 +84,15 @@ const SignUp = () => {
 
     return (
         <div> 
+            <div className='rowC'>
         <Navbar/>
+            </div>
+        {/* <span className='outerWrap'> */}
+        
         <StyledSignUp>
-        <div className="container">
-            
+        
+            <div className='formWrap'>
+            <img src={imageS} className="form-image" alt="Logo" />
         
             <form onSubmit={submitHandler}>
             <div className='lable-top'><h2>Sign Up</h2></div>
@@ -105,10 +111,12 @@ const SignUp = () => {
                     placeholder="password"
                     onChange={changeHandler}
                 />
+                <button>Sign Up</button>
             </form>
-            <button>Sign Up</button>
+            
         </div>
         </StyledSignUp>
+        {/* </span> */}
         </div>
     )
 }

@@ -8,7 +8,8 @@ const StyledLogin = styled.div`
     form{
        
         display: flex;
-        margin: 0 auto;
+        margin:  auto;
+        margin-left: -20rem;
         flex-flow: column;
         
         
@@ -38,6 +39,7 @@ const StyledLogin = styled.div`
         border: 1.rem solid #008037;
         font-weight: bold;
         width: 10rem;
+        margin-left: -15rem;
     }
     .container{
         display: flex;
@@ -46,6 +48,7 @@ const StyledLogin = styled.div`
         height: 100vh;
         justify-content: center;
         margin: -20rem;
+        z-index: -1;
         
        
 
@@ -95,7 +98,6 @@ const Login = () => {
             
         <StyledLogin>
         
-            <div className="container">
             
             
                 <form onSubmit={submitHandler}>
@@ -117,7 +119,7 @@ const Login = () => {
                     />
                 </form>
                 <button>Login</button>
-            </div>
+            
         </StyledLogin>
         </div>
         </div>

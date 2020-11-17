@@ -6,7 +6,10 @@
   border: .1rem solid red;
 } */
 
-body{
+.main{
+  dispay: flex;
+  justify-content: center;
+  margin: auto;
   background: antiquewhite;
   
 }
@@ -24,6 +27,8 @@ body{
 .outterForm{
   Margin: auto;
   padding-top: 10rem;
+  display: flex;
+  flex-direction: row;
 }
 
 
@@ -44,9 +49,7 @@ body{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
+
 
 .box{
   background: antiquewhite;
@@ -60,7 +63,7 @@ body{
 .logo{
   border-radius: 5rem;
   height: 4rem;
-  box-shadow: 5px 10px 10px seagreen;
+  box-shadow: 5px 10px 10px rgb(203, 233, 185);
   border: solid .1rem antiquewhite;
   margin-right: 2rem;
 }
@@ -108,10 +111,11 @@ header{
   text-decoration: none;
   margin: .75rem;
   margin-right: 2;
+  z-index: 10;
 }
 
 a:link {
-  box-shadow: 5px 10px 10px lightblue;
+  box-shadow: 5px 10px 10px rgb(203, 233, 185);
   text-decoration: none;
   border: solid .1rem antiquewhite;
 }
@@ -127,7 +131,7 @@ a:visited {
 
 /* mouse over link */
 a:hover {
-  box-shadow: 2px 3px 7px paleturquoise;
+  box-shadow: 2px 3px 7px rgb(203, 233, 185);
   text-decoration: none;
   
   border: solid .1rem antiquewhite;

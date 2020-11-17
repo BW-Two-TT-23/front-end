@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-// import logo from './src/images/logo1.png'
+import logo from '../images/logo1.png';
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -11,7 +11,7 @@ const Navbar = () => {
       aria-label="main navigation"
     >
       <div className="container">
-      {/* <img src={logo} className="logo" alt="Logo" /> */}
+       <img src={logo} className="logo" alt="Logo" />
         <NavLink to = './Home'>Home</NavLink>
       	<NavLink to = './About'>About</NavLink>
         <NavLink to = './SignUp'>Sign Up</NavLink>

@@ -4,14 +4,18 @@ import Navbar from './Navbar'
 function Home(){
     return(
     
-    <div>
+        <div>
+    <div className='rowC'>
         
-        <Navbar className='bar'/>
+        <Navbar />
+        </div>
+        
+
         <h1>Welcome to AnyTime Fitness</h1>
 
         {/* <img src={logo} className="logo" alt="Logo" /> */}
         </div>
-    
+        
     );
 
 }

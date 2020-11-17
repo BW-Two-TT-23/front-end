@@ -2,6 +2,9 @@
   text-align: center;
 }
 
+/* *{
+  border: .1rem solid red;
+} */
 
 body{
   background: antiquewhite;
@@ -11,7 +14,17 @@ body{
   text-align: center;
 }
 
+.formWrap{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
+.outterForm{
+  Margin: auto;
+  padding-top: 10rem;
+}
 
 
 body{
@@ -47,7 +60,7 @@ body{
 .logo{
   border-radius: 5rem;
   height: 4rem;
-  box-shadow: 5px 10px 10px lightblue;
+  box-shadow: 5px 10px 10px seagreen;
   border: solid .1rem antiquewhite;
   margin-right: 2rem;
 }
@@ -69,6 +82,14 @@ display: flex;
   text-decoration: none;
 
 } 
+.form-image{
+  height: 20rem;
+  border-radius: 25px;
+ 
+}
+
+
+
 header{
   display:flex;
   flex-direction: row;
@@ -98,6 +119,7 @@ a:link {
 /* visited link */
 a:visited {
   box-shadow: 5px 10px 5px paleturquoise;
+  color: black;
   text-decoration: none;
   border: solid .1rem antiquewhite;
  

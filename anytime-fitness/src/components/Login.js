@@ -2,18 +2,20 @@ import react, { useState } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import Navbar from './Navbar'
+import imageL from '../images/Login.png'
 
 const StyledLogin = styled.div`
     form{
-        width: 60%;
+       
         display: flex;
         margin: 0 auto;
-        flex-flow: column
-        ;
+        flex-flow: column;
+        
+        
     }
 
     input{
-        width: 30%;
+       
         display: flex;
         margin: 2% auto;
         text-align: center;
@@ -28,13 +30,14 @@ const StyledLogin = styled.div`
     }
 
     button{
-        width: 15%;
+        
         margin: 3% auto;
         text-align: center;
         padding: 1%;
         margin-bottom: 2%;
         border: 1.rem solid #008037;
         font-weight: bold;
+        width: 10rem;
     }
     .container{
         display: flex;
@@ -42,16 +45,13 @@ const StyledLogin = styled.div`
         padding: 2%;
         height: 100vh;
         justify-content: center;
+        margin: -20rem;
+        
        
 
     }
 
-    form{
-        dislay: flex;
-        flex-direction: column;
-        border: .1rem solid #008037;
-       
-    }
+   
 
     .lable-top{
         align-text: center;
@@ -82,14 +82,22 @@ const Login = () => {
     }
 
     return(
-        <div>
-            <Navbar/>
-            <div className='form'></div>
-        <StyledLogin>
+
+        <div className='outerForm'>
+            <div className='rowC'>
+            <Navbar />
+            </div>
+            <div className='formWrap'>
             
+                <img src={imageL} className="form-image" alt="Logo" />
+            
+            
+            
+        <StyledLogin>
+        
             <div className="container">
-                
-                
+            
+            
                 <form onSubmit={submitHandler}>
                 <div className='lable-top'><h2>Login</h2></div>
                     <input 
@@ -111,6 +119,7 @@ const Login = () => {
                 <button>Login</button>
             </div>
         </StyledLogin>
+        </div>
         </div>
     )
 }

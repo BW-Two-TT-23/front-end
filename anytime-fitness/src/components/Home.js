@@ -1,5 +1,6 @@
 import Navbar from './Navbar'
-// import logo from './images/logo1.png'
+import kettlebell from '../images/kettlebell.png'
+import run from '../images/run.png'
 
 function Home(){
     return(
@@ -10,12 +11,25 @@ function Home(){
         <Navbar />
         </div>
         
+        <div className='homeText1'>
+            <h1>Welcome to AnyTime Fitness</h1>
+            <p>Welcome!</p>
+            <p>We're glad you're here.</p>
+            <p>The world is a little crazy right now, but you can still take good care of yourself.</p> <p>Register for a class today!</p>
+        
 
-        <h1>Welcome to AnyTime Fitness</h1>
+        <div className="photosMainLeft">
+        <img src={kettlebell} className="photosMain20" alt="Image of a kettlebell" />
 
-        {/* <img src={logo} className="logo" alt="Logo" /> */}
         </div>
         
+        <div className="photosMainright">
+        <img src={run} className="photosMainN20" alt="Image of a runner" />
+
+        </div>
+       
+        </div>
+        </div>
     );
 
 }

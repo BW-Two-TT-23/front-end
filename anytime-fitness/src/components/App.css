@@ -40,6 +40,33 @@
  
 }
 
+.homeText1{
+  display: flex;
+  flex-drection: row;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.photosMain20{
+  border: .5rem solid white;
+  transform: rotate(20deg);
+  height: 15rem;
+}
+.photosMainN20{
+  border: .5rem solid white;
+  transform: rotate(-20deg);
+  height: 15rem;
+}
+
+.photosMainLeft{
+  justify-content: left;
+
+}
+.photosMainRight{
+ justify-content: right;
+
+}
+
 .formWrap{
   display: flex;
   flex-direction: row;

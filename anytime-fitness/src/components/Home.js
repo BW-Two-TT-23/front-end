@@ -11,12 +11,13 @@ function Home(){
         <Navbar />
         </div>
         
-        <div className='homeText1'>
+        <div className='homeMain'>
+            <div className='homeMain1'>
             <h1>Welcome to AnyTime Fitness</h1>
             <p>Welcome!</p>
             <p>We're glad you're here.</p>
             <p>The world is a little crazy right now, but you can still take good care of yourself.</p> <p>Register for a class today!</p>
-        
+            </div>
 
         <div className="photosMainLeft">
         <img src={kettlebell} className="photosMain20" alt="Image of a kettlebell" />

@@ -47,6 +47,14 @@
   margin-top: 3rem;
 }
 
+.homeMain{
+  display: flex;
+  flex-drection: row;
+  text-align: center;
+  margin-top: 3rem;
+
+}
+
 .photosMain20{
   border: .5rem solid white;
   transform: rotate(20deg);

@@ -1,4 +1,3 @@
-
 import Navbar from './Navbar'
 import numbers from '../images/numbers.png'
 import Bmi from './Bmi'

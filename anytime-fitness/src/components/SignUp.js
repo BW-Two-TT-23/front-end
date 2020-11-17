@@ -1,6 +1,8 @@
 import react, { useState } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
+import Navbar from './Navbar'
+import imageS from '../images/signup.png'
 
 const StyledSignUp = styled.div`
     form{
@@ -17,7 +19,7 @@ const StyledSignUp = styled.div`
         margin: 2% auto;
         text-align: center;
         padding: 0.8%;
-        border: 3px solid #008037;
+        border: .1rem solid #008037;
     }
 
     h2{
@@ -32,18 +34,31 @@ const StyledSignUp = styled.div`
         text-align: center;
         padding: 1%;
         margin-bottom: 2%;
-        border: 3px solid #008037;
+        border: .1rem solid #008037;
         font-weight: bold;
     }
     .container{
         display: flex;
-        flex-flow: column;
+        flex-direction: column;
         padding: 2%;
         height: 100vh;
         justify-content: center;
-        border: 1px solid black;
+        
 
     }
+    form{
+        dislay: flex;
+        flex-direction: column;
+        margin-left: -10rem;
+       
+    }
+
+    .lable-top{
+        align-text: center;
+        margin: auto;
+    
+    }
+
 `
 
 
@@ -68,15 +83,24 @@ const SignUp = () => {
     }
 
     return (
+        <div> 
+            <div className='rowC'>
+        <Navbar/>
+            </div>
+        {/* <span className='outerWrap'> */}
+        
         <StyledSignUp>
-        <div className="container">
-            <h2>Sign Up</h2>
+        
+            <div className='formWrap'>
+            <img src={imageS} className="form-image" alt="Logo" />
+        
             <form onSubmit={submitHandler}>
+            <div className='lable-top'><h2>Sign Up</h2></div>
                 <input 
                     type="text"
                     name="username"
                     value={formValue.username}
-                    placeholder="username"
+                    placeholder="email address"
                     onChange={changeHandler}
                 />
 
@@ -87,11 +111,13 @@ const SignUp = () => {
                     placeholder="password"
                     onChange={changeHandler}
                 />
+                <button>Sign Up</button>
             </form>
-            <button>Sign Up</button>
+            
         </div>
         </StyledSignUp>
-
+        {/* </span> */}
+        </div>
     )
 }
 

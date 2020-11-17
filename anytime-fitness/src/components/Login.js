@@ -1,23 +1,27 @@
 import react, { useState } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
+import Navbar from './Navbar'
+import imageL from '../images/Login.png'
 
 const StyledLogin = styled.div`
     form{
-        width: 60%;
+       
         display: flex;
-        margin: 0 auto;
-        flex-flow: column
-        ;
+        margin:  auto;
+        margin-left: -20rem;
+        flex-flow: column;
+        
+        
     }
 
     input{
-        width: 30%;
+       
         display: flex;
         margin: 2% auto;
         text-align: center;
         padding: 0.8%;
-        border: 3px solid #008037;
+       
     }
 
     h2{
@@ -27,13 +31,15 @@ const StyledLogin = styled.div`
     }
 
     button{
-        width: 15%;
+        
         margin: 3% auto;
         text-align: center;
         padding: 1%;
         margin-bottom: 2%;
-        border: 3px solid #008037;
+        border: 1.rem solid #008037;
         font-weight: bold;
+        width: 10rem;
+        margin-left: -15rem;
     }
     .container{
         display: flex;
@@ -41,8 +47,19 @@ const StyledLogin = styled.div`
         padding: 2%;
         height: 100vh;
         justify-content: center;
-        border: 1px solid black;
+        margin: -20rem;
+        z-index: -1;
+        
+       
 
+    }
+
+   
+
+    .lable-top{
+        align-text: center;
+        margin: auto;
+    
     }
 `
 
@@ -68,15 +85,28 @@ const Login = () => {
     }
 
     return(
+
+        <div className='outerForm'>
+            <div className='rowC'>
+            <Navbar />
+            </div>
+            <div className='formWrap'>
+            
+                <img src={imageL} className="form-image" alt="Logo" />
+            
+            
+            
         <StyledLogin>
-            <div className="container">
-                <h2>Login</h2>
+        
+            
+            
                 <form onSubmit={submitHandler}>
+                <div className='lable-top'><h2>Login</h2></div>
                     <input 
                         type="text"
                         name="username"
                         value={formValue.username}
-                        placeholder="username"
+                        placeholder="email address"
                         onChange={changeHandler}
                     />
 
@@ -89,8 +119,10 @@ const Login = () => {
                     />
                 </form>
                 <button>Login</button>
-            </div>
+            
         </StyledLogin>
+        </div>
+        </div>
     )
 }
 

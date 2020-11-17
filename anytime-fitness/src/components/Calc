@@ -1,0 +1,15 @@
+import Navbar from './Navbar'
+
+function Calc(){
+    return(
+    
+    <div>
+        <Navbar/>
+        <h1>Calcs</h1>
+        </div>
+    
+    );
+
+}
+
+export default Calc;

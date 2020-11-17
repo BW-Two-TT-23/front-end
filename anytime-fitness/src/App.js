@@ -1,39 +1,41 @@
 
 import './components/App.css';
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import SignUp from './components/SignUp'
 import Login from './components/Login'
-import Buttons from './components/Buttons'
-import logo from './images/logo1.png'
+import About from './components/About'
+import Home from './components/Home'
+import Tools from './components/Tools'
 
 function App() {
   return (
-    <div className='App'>
-      <div className="rowC">
-      <img src={logo} className="logo" alt="Logo" />
-      <a href="#"><Buttons name='Home' /></a>
-<a href="#"><Buttons name='About' /></a>
-    <a href="#"><Buttons name='Calculators' /></a>
-    <a href="#"><Buttons name='Login' /></a>
-    <a href="#"><Buttons name='Register' /></a>
-    </div>
     
-   <h1>Anywhere Fitness Coming Soon!</h1>
-    
-    </div>
-
-
-    
-  //   // <Router>
-  //   //   <div className="App">
-  //   //     <Switch>
-  //   //       <Route path="/SignUp" component={SignUp} />
-  //   //       <Route path="/Login" component={Login} />
-  //   //     </Switch>
+ 
+     
+    <Router>
+      
+        <Switch>
+          <Route path="/SignUp" component={SignUp} />
+          <Route path="/Login" component={Login} />
+          <Route path="/Home" component={Home}/>
+          <Route path="/About" component={About} />
+          <Route path="/Tools" component={Tools} />
+          
+          
+        </Switch>
         
-  //   //   </div>
-  //   // </Router>
+    
+    </Router>
+
+
+      
+    
+    
+
+
+    
+   
   );
 }
 

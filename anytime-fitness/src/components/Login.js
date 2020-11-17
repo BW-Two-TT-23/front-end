@@ -1,6 +1,7 @@
 import react, { useState } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
+import Navbar from './Navbar'
 
 const StyledLogin = styled.div`
     form{
@@ -68,7 +69,11 @@ const Login = () => {
     }
 
     return(
+        <div>
+            <Navbar/>
+
         <StyledLogin>
+            
             <div className="container">
                 <h2>Login</h2>
                 <form onSubmit={submitHandler}>
@@ -91,6 +96,7 @@ const Login = () => {
                 <button>Login</button>
             </div>
         </StyledLogin>
+        </div>
     )
 }
 

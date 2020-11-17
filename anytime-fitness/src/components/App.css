@@ -52,6 +52,12 @@ body{
   margin-right: 2rem;
 }
 
+.Bar{
+justify-content: center;
+display: flex;
+
+}
+
  .box2{
   background: antiquewhite; 
   border-radius: 5rem;

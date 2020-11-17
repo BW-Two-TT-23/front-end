@@ -1,6 +1,7 @@
 import react, { useState } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
+import Navbar from './Navbar'
 
 const StyledSignUp = styled.div`
     form{
@@ -68,6 +69,8 @@ const SignUp = () => {
     }
 
     return (
+        <div> 
+        <Navbar/>
         <StyledSignUp>
         <div className="container">
             <h2>Sign Up</h2>
@@ -91,7 +94,7 @@ const SignUp = () => {
             <button>Sign Up</button>
         </div>
         </StyledSignUp>
-
+        </div>
     )
 }
 

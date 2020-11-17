@@ -1,16 +1,16 @@
 
 import Navbar from './Navbar'
 
-function About(){
+function Tools(){
     return(
     
     <div>
         <Navbar/>
-        <h1>This is our Team!</h1>
+        <h1>Tools to help</h1>
         </div>
     
     );
 
 }
 
-export default About;
+export default Tools;

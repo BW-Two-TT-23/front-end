@@ -2,8 +2,9 @@
 import axios from 'axios'
 import react, { useState, useEffect } from 'react'
 import './FitnessClass.css'
+import { axiosWithAuth } from './utils/axiosWithAuth'
 
-const initialClass = 
+const initialClass =
     {
         name: "",
         type: "",
@@ -37,9 +38,14 @@ const FitnessClass = () => {
 
     const submitHandler = e => {
         e.preventDefault()
+        // console.log(fitnessClass)
         axios.post('https://anywherefitness1120.herokuapp.com/api/classes', fitnessClass)
-        .then(res => console.log(res))
+        .then(res => {
+            // setFitnessClass(initialClass)
+            console.log(res)
+        })
         .catch(err => console.log(err))
+        
         
     }
 

@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 import imageMax from '../images/max500.png'
 import imagePH from '../images/placeholder.png'
 
-function About(){
+function Reviews(){
     return(
     
     <div>
@@ -11,38 +11,38 @@ function About(){
         
         <div className='main'>
         <div>
-        <h1 className='topMargin'>This is our Team!</h1>
-        <p>We are a students at Lambda School, building cool sites.</p>
+        <h1 className='topMargin'>Check Out Our Reviews!</h1>
+        <p>Text Here</p>
         </div>
         </div> 
         {/* main */}
         
 
-        <div className='teamPhotoBar'>
-            <div><img src={imageMax} className="teamPhoto" alt="Image of a blue haired web developer named Max" />
+        <div className='reviewBar'>
+            <div><img src={imageMax} className="teamPhoto" alt="Ma" />
             <p>Max is devoted to UI/UX.</p>
             </div>
 
             <div>
-            <img src={imagePH} className="teamPhoto" alt="placeholder" />
+            <img src={imagePH} className="reviewCard" alt="placeholder" />
             <p>coming soon</p>
 
             </div>
             <div>
-            <img src={imagePH} className="teamPhoto" alt="Placeholder" />
+            <img src={imagePH} className="reviewCard" alt="Placeholder" />
             <p>coming soon</p>
 
             </div>
         
 
         </div>
-        <div className='teamPhotoBar'>
-            <div><img src={imageMax} className="teamPhoto" alt="Image of a blue haired web developer named Max" />
-            <p>Max is devoted to UI/UX.</p>
+        <div className='reviewBar'>
+            <div className="reviewCard">
+            <p>Text Here</p>
             </div>
 
             <div>
-            <img src={imagePH} className="teamPhoto" alt="placeholder" />
+            <img src={imagePH} className="reviewCard" alt="placeholder" />
             <p>coming soon</p>
 
             </div>
@@ -62,4 +62,4 @@ function About(){
 
 }
 
-export default About;
+export default Reviews;

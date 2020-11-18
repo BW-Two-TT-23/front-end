@@ -9,6 +9,7 @@ import About from './components/About'
 import Home from './components/Home'
 import Tools from './components/Tools'
 import FitnessClass from './components/FitnessClass'
+import Reviews from './components/Reviews'
 
 
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/About" component={About} />
           <Route path="/Tools" component={Tools} />
           <Route path="/FitnessClass" component={FitnessClass} />
+          <Route path="/Reviews" component={Reviews} />
           <PrivateRoute/>
         </Switch>
         

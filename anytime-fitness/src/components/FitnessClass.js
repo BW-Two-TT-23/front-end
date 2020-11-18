@@ -1,3 +1,4 @@
+
 import axios from 'axios'
 import react, { useState, useEffect } from 'react'
 import './FitnessClass.css'
@@ -15,6 +16,7 @@ const initialClass =
         maxclasssize: "",
         class_imageurl: ""
     }
+
 
 
 const FitnessClass = () => {
@@ -49,7 +51,10 @@ const FitnessClass = () => {
 
     return(
         <div className="class-container">
+
             <h1 className="register-header">Register a Class</h1>
+
+  
             <form onSubmit={submitHandler}>
                 <input 
                     type="text"

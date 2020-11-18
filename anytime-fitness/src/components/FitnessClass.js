@@ -1,20 +1,30 @@
-import react, { useState } from 'react'
-import Navbar from './Navbar'
+
+import axios from 'axios'
+import react, { useState, useEffect } from 'react'
+import './FitnessClass.css'
+
+const initialClass = 
+    {
+        name: "",
+        type: "",
+        starttime: "",
+        duration: "",
+        intensitylevel: "",
+        location: "",
+        numberofattendees: "",
+        maxclasssize: "",
+        class_imageurl: ""
+    }
 
 
-const initialClass = {
-    name: "",
-    type: "",
-    start_time: "",
-    duration: "",
-    intensity_level: "",
-    location: "",
-    registered_attendees: "",
-    class_size: "",
-    class_image: ""
-}
 
 const FitnessClass = () => {
+
+    useEffect(() => {
+        axios.get('https://anywherefitness1120.herokuapp.com/api/classes')
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+    }, [])
 
     const [fitnessClass, setFitnessClass] = useState(initialClass)
 
@@ -27,16 +37,18 @@ const FitnessClass = () => {
 
     const submitHandler = e => {
         e.preventDefault()
+        axios.post('https://anywherefitness1120.herokuapp.com/api/classes', fitnessClass)
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+        
     }
 
     return(
         <div className="class-container">
-             <div className='rowC'>
-                <Navbar/>
-            </div>
-            <div className='rowC'>
-            <h1>Register a Class</h1>
-            </div>
+
+            <h1 className="register-header">Register a Class</h1>
+
+  
             <form onSubmit={submitHandler}>
                 <input 
                     type="text"
@@ -56,14 +68,14 @@ const FitnessClass = () => {
 
                 <input 
                     type="text"
-                    name="start_time"
-                    value={fitnessClass.start_time}    
+                    name="starttime"
+                    value={fitnessClass.starttime}    
                     placeholder="START TIME"
                     onChange={changeHandler}       
                 />
 
                 <input 
-                    type="number"
+                    type="text"
                     name="duration"
                     value={fitnessClass.duration}    
                     placeholder="DURATION"
@@ -72,8 +84,8 @@ const FitnessClass = () => {
 
                 <input 
                     type="number"
-                    name="intensity_level"
-                    value={fitnessClass.intensity_level}    
+                    name="intensitylevel"
+                    value={fitnessClass.intensitylevel}    
                     placeholder="INTENSITY LEVEL"
                     onChange={changeHandler}       
                 />
@@ -88,25 +100,26 @@ const FitnessClass = () => {
 
                 <input 
                     type="number"
-                    name="registered_attendees"
-                    value={fitnessClass.registered_attendees}    
+                    name="numberofattendees"
+                    value={fitnessClass.numberofattendees}    
                     placeholder="REGISTERED ATTENDEES"
                     onChange={changeHandler}       
                 />
 
                 <input 
                     type="number"
-                    name="class_size"
-                    value={fitnessClass.class_size}    
+                    name="maxclasssize"
+                    value={fitnessClass.maxclasssize}    
                     placeholder="CLASS SIZE"
                     onChange={changeHandler}       
                 />
                 <input 
-                    type="file"
-                    name="class_image"
+                    type="text"
+                    name="class_imageurl"
                     id={Date.now()}
-                    placeholder="CLASS IMAGE"
-                    src={fitnessClass.class_image}
+                    placeholder="CLASS IMAGE URL"
+                    value={fitnessClass.class_imageurl}
+                    onChange={changeHandler}
                 />
                 <button>Submit</button>
             </form>

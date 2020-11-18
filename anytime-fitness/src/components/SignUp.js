@@ -1,25 +1,22 @@
-import react, { useState } from 'react'
+import react, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 import Navbar from './Navbar'
 import imageS from '../images/signup.png'
+import { useHistory } from 'react-router-dom'
 
 const StyledSignUp = styled.div`
     form{
-        width: 60%;
         display: flex;
         margin: 0 auto;
-        flex-flow: column
-        ;
+        flex-flow: column;
     }
 
     input{
-        width: 30%;
         display: flex;
         margin: 2% auto;
         text-align: center;
-        padding: 0.8%;
-        border: .1rem solid #008037;
+        padding: 2%;
     }
 
     h2{
@@ -29,13 +26,12 @@ const StyledSignUp = styled.div`
     }
 
     button{
-        width: 15%;
         margin: 3% auto;
         text-align: center;
-        padding: 1%;
+        padding: 2%;
         margin-bottom: 2%;
-        border: .1rem solid #008037;
         font-weight: bold;
+        width: 100%
     }
     .container{
         display: flex;
@@ -43,69 +39,92 @@ const StyledSignUp = styled.div`
         padding: 2%;
         height: 100vh;
         justify-content: center;
+        margin: -20rem;
+        z-index: -1;
         
 
     }
-    form{
-        dislay: flex;
-        flex-direction: column;
-        margin-left: -10rem;
-       
-    }
+   
 
     .lable-top{
-        align-text: center;
+        text-align: center;
         margin: auto;
     
     }
 
 `
 
-
 const initialFormValue = {
     username: "",
-    password: ""
+    password: "",
+    email: ""
 }
 
+
+
+
 const SignUp = () => {
+
+    useEffect(() => {
+        axios.get('https://anywherefitness1120.herokuapp.com/api/user')
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+    }, [])
+
+    const { push } = useHistory()
+
+   
 
     const [formValue, setFormValue] = useState(initialFormValue)
 
     const changeHandler = e => {
         setFormValue({
-            ...initialFormValue,
+            ...formValue,
             [e.target.name]: e.target.value
         })
     }
 
     const submitHandler = e => {
         e.preventDefault()
+        axios.post('https://anywherefitness1120.herokuapp.com/api/auth/signup', formValue)
+        .then(res => {
+            console.log(res)
+        })
+        .catch(err => console.log(err))
     }
 
     return (
-        <div> 
+        <div className="container"> 
             <div className='rowC'>
         <Navbar/>
             </div>
         {/* <span className='outerWrap'> */}
         
-        <StyledSignUp>
         
             <div className='formWrap'>
             <img src={imageS} className="form-image" alt="Logo" />
-        
+            <StyledSignUp>
+
             <form onSubmit={submitHandler}>
-            <div className='lable-top'><h2>Sign Up</h2></div>
+            <div className='lable-top'></div>
                 <input 
                     type="text"
                     name="username"
                     value={formValue.username}
-                    placeholder="email address"
+                    placeholder="username"
                     onChange={changeHandler}
                 />
 
                 <input 
                     type="text"
+                    name="email"
+                    value={formValue.email}
+                    placeholder="email address"
+                    onChange={changeHandler}
+                />
+
+                <input 
+                    type="password"
                     name="password"
                     value={formValue.password}
                     placeholder="password"
@@ -113,9 +132,9 @@ const SignUp = () => {
                 />
                 <button>Sign Up</button>
             </form>
-            
+         </StyledSignUp>
+
         </div>
-        </StyledSignUp>
         {/* </span> */}
         </div>
     )

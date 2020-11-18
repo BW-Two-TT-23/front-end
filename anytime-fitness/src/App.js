@@ -9,6 +9,7 @@ import About from './components/About'
 import Home from './components/Home'
 import Tools from './components/Tools'
 import FitnessClass from './components/FitnessClass'
+import ClassList from './components/ClassList'
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/About" component={About} />
           <Route path="/Tools" component={Tools} />
           <Route path="/FitnessClass" component={FitnessClass} />
+          <Route path="/ClassList" component={ClassList}/>
           <PrivateRoute/>
         </Switch>
         

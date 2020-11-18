@@ -83,6 +83,7 @@ const Login = () => {
         axios.post('https://anywherefitness1120.herokuapp.com/api/auth/login', formValue)
         .then(res => {
             localStorage.setItem('token', res.data.token)
+            console.log(res)
             push('/FitnessClass')
         })
         .catch(err => console.log(err))

@@ -5,8 +5,6 @@ import Bmi from './Bmi'
 function Tools(){
     return(
 
-       
-    
     <div>
         <div className='rowC'>
         <Navbar/>

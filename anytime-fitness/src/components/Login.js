@@ -133,7 +133,7 @@ const Login = () => {
                         onChange={changeHandler}
                     />
                 </form>
-                <button>Login</button>
+                <button type="submit">Login</button>
             
         </StyledLogin>
         </div>

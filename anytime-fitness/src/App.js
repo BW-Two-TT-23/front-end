@@ -11,6 +11,10 @@ import Tools from './components/Tools'
 import FitnessClass from './components/FitnessClass'
 
 
+
+
+
+
 function App() {
   return (
     
@@ -21,7 +25,7 @@ function App() {
         <Switch>
           <Route path="/SignUp" component={SignUp} />
           <Route path="/Login" component={Login} />
-          <Route exact path="/" component={Home}/>
+          <Route exact path="/Home" component={Home}/>
           <Route path="/About" component={About} />
           <Route path="/Tools" component={Tools} />
           <Route path="/FitnessClass" component={FitnessClass} />

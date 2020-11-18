@@ -4,10 +4,14 @@ import Bmi from './Bmi'
 
 function Tools(){
     return(
+        
 
-       
-    
+
+
+
     <div>
+
+
         <div className='rowC'>
         <Navbar/>
         </div>
@@ -23,7 +27,7 @@ function Tools(){
                 
             <input type='text'
             placeholder="weight"
-            name="weightBMI"
+            name="weight"
             ></input>
             
             </div>
@@ -31,14 +35,14 @@ function Tools(){
             
             <input type='text'
             placeholder="height"
-            name="heightBMI"
+            name="height"
             >
         
             </input>
             <div>
                 <button onClick={Bmi}>Calculate</button>
             </div>
-            <h2>Your BMI is: </h2>
+            <h2>Your BMI is: {}</h2>
             </div>
 
         </form>

@@ -1,4 +1,5 @@
 import react, { useState } from 'react'
+import Navbar from './Navbar'
 
 
 const initialClass = {
@@ -30,7 +31,12 @@ const FitnessClass = () => {
 
     return(
         <div className="class-container">
+             <div className='rowC'>
+                <Navbar/>
+            </div>
+            <div className='rowC'>
             <h1>Register a Class</h1>
+            </div>
             <form onSubmit={submitHandler}>
                 <input 
                     type="text"

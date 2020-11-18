@@ -1,21 +1,28 @@
-import react, { useState } from 'react'
+import axios from 'axios'
+import react, { useState, useEffect } from 'react'
 import './FitnessClass.css'
 
-const initialClass = [
+const initialClass = 
     {
         name: "",
         type: "",
-        start_time: "",
+        starttime: "",
         duration: "",
-        intensity_level: "",
+        intensitylevel: "",
         location: "",
-        registered_attendees: "",
-        class_size: "",
+        numberofattendees: "",
+        maxclasssize: "",
         class_imageurl: ""
     }
-]
+
 
 const FitnessClass = () => {
+
+    useEffect(() => {
+        axios.get('https://anywherefitness1120.herokuapp.com/api/classes')
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+    }, [])
 
     const [fitnessClass, setFitnessClass] = useState(initialClass)
 
@@ -28,7 +35,10 @@ const FitnessClass = () => {
 
     const submitHandler = e => {
         e.preventDefault()
-        console.log(fitnessClass)
+        axios.post('https://anywherefitness1120.herokuapp.com/api/classes', fitnessClass)
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+        
     }
 
     return(
@@ -53,8 +63,8 @@ const FitnessClass = () => {
 
                 <input 
                     type="text"
-                    name="start_time"
-                    value={fitnessClass.start_time}    
+                    name="starttime"
+                    value={fitnessClass.starttime}    
                     placeholder="START TIME"
                     onChange={changeHandler}       
                 />
@@ -69,8 +79,8 @@ const FitnessClass = () => {
 
                 <input 
                     type="number"
-                    name="intensity_level"
-                    value={fitnessClass.intensity_level}    
+                    name="intensitylevel"
+                    value={fitnessClass.intensitylevel}    
                     placeholder="INTENSITY LEVEL"
                     onChange={changeHandler}       
                 />
@@ -85,16 +95,16 @@ const FitnessClass = () => {
 
                 <input 
                     type="number"
-                    name="registered_attendees"
-                    value={fitnessClass.registered_attendees}    
+                    name="numberofattendees"
+                    value={fitnessClass.numberofattendees}    
                     placeholder="REGISTERED ATTENDEES"
                     onChange={changeHandler}       
                 />
 
                 <input 
                     type="number"
-                    name="class_size"
-                    value={fitnessClass.class_size}    
+                    name="maxclasssize"
+                    value={fitnessClass.maxclasssize}    
                     placeholder="CLASS SIZE"
                     onChange={changeHandler}       
                 />

@@ -39,7 +39,6 @@ const StyledLogin = styled.div`
         border: 1.rem solid #008037;
         font-weight: bold;
         width: 10rem;
-        margin-left: -15rem;
     }
     .container{
         display: flex;
@@ -132,8 +131,8 @@ const Login = () => {
                         placeholder="password"
                         onChange={changeHandler}
                     />
+                    <button type="submit">Login</button>
                 </form>
-                <button type="submit">Login</button>
             
         </StyledLogin>
         </div>

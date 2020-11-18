@@ -1,17 +1,19 @@
 import react, { useState } from 'react'
+import './FitnessClass.css'
 
-
-const initialClass = {
-    name: "",
-    type: "",
-    start_time: "",
-    duration: "",
-    intensity_level: "",
-    location: "",
-    registered_attendees: "",
-    class_size: "",
-    class_image: ""
-}
+const initialClass = [
+    {
+        name: "",
+        type: "",
+        start_time: "",
+        duration: "",
+        intensity_level: "",
+        location: "",
+        registered_attendees: "",
+        class_size: "",
+        class_imageurl: ""
+    }
+]
 
 const FitnessClass = () => {
 
@@ -26,11 +28,12 @@ const FitnessClass = () => {
 
     const submitHandler = e => {
         e.preventDefault()
+        console.log(fitnessClass)
     }
 
     return(
         <div className="class-container">
-            <h1>Register a Class</h1>
+            <h1 className="register-header">Register a Class</h1>
             <form onSubmit={submitHandler}>
                 <input 
                     type="text"
@@ -57,7 +60,7 @@ const FitnessClass = () => {
                 />
 
                 <input 
-                    type="number"
+                    type="text"
                     name="duration"
                     value={fitnessClass.duration}    
                     placeholder="DURATION"
@@ -96,11 +99,12 @@ const FitnessClass = () => {
                     onChange={changeHandler}       
                 />
                 <input 
-                    type="file"
-                    name="class_image"
+                    type="text"
+                    name="class_imageurl"
                     id={Date.now()}
-                    placeholder="CLASS IMAGE"
-                    src={fitnessClass.class_image}
+                    placeholder="CLASS IMAGE URL"
+                    value={fitnessClass.class_imageurl}
+                    onChange={changeHandler}
                 />
                 <button>Submit</button>
             </form>

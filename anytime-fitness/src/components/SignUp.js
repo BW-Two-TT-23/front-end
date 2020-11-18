@@ -9,8 +9,7 @@ const StyledSignUp = styled.div`
         width: 60%;
         display: flex;
         margin: 0 auto;
-        flex-flow: column
-        ;
+        flex-flow: column;
     }
 
     input{
@@ -47,27 +46,32 @@ const StyledSignUp = styled.div`
 
     }
     form{
-        dislay: flex;
+        display: flex;
         flex-direction: column;
         margin-left: -10rem;
        
     }
 
     .lable-top{
-        align-text: center;
+        text-align: center;
         margin: auto;
     
     }
 
 `
 
-
 const initialFormValue = {
     username: "",
-    password: ""
+    password: "",
+    email: ""
 }
 
+
+
+
 const SignUp = () => {
+
+   
 
     const [formValue, setFormValue] = useState(initialFormValue)
 
@@ -80,6 +84,9 @@ const SignUp = () => {
 
     const submitHandler = e => {
         e.preventDefault()
+        axios.post('https://anywherefitness1120.herokuapp.com/api/auth/signup', formValue)
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
     }
 
     return (
@@ -100,6 +107,14 @@ const SignUp = () => {
                     type="text"
                     name="username"
                     value={formValue.username}
+                    placeholder="username"
+                    onChange={changeHandler}
+                />
+
+                <input 
+                    type="text"
+                    name="email"
+                    value={formValue.email}
                     placeholder="email address"
                     onChange={changeHandler}
                 />

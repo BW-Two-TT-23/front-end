@@ -57,7 +57,7 @@ const StyledLogin = styled.div`
    
 
     .lable-top{
-        align-text: center;
+        text-align: center;
         margin: auto;
     
     }
@@ -66,7 +66,8 @@ const StyledLogin = styled.div`
 
 const initialFormValue = {
     username: "",
-    password: ""
+    password: "",
+    email: ""
 }
 
 const Login = () => {
@@ -106,6 +107,14 @@ const Login = () => {
                         type="text"
                         name="username"
                         value={formValue.username}
+                        placeholder="username"
+                        onChange={changeHandler}
+                    />
+
+                <input 
+                        type="text"
+                        name="email"
+                        value={formValue.email}
                         placeholder="email address"
                         onChange={changeHandler}
                     />

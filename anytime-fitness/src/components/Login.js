@@ -1,4 +1,4 @@
-import react, { useState } from 'react'
+import react, { useState, useEffect } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import Navbar from './Navbar'
@@ -72,17 +72,26 @@ const initialFormValue = {
 
 const Login = () => {
 
+    useEffect(() => {
+        axios.get('https://anywherefitness1120.herokuapp.com/api/user')
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+    }, [])
+
     const [formValue, setFormValue] = useState(initialFormValue)
 
     const changeHandler = e => {
         setFormValue({
-            // ...initialFormValue,
+            ...formValue,
             [e.target.name]: e.target.value
         })
     }
 
     const submitHandler = e => {
         e.preventDefault()
+        axios.post('https://anywherefitness1120.herokuapp.com/api/auth/login', formValue)
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
     }
 
     return(
@@ -98,9 +107,6 @@ const Login = () => {
             
             
         <StyledLogin>
-        
-            
-            
                 <form onSubmit={submitHandler}>
                 <div className='lable-top'><h2>Login</h2></div>
                     <input 
@@ -120,7 +126,7 @@ const Login = () => {
                     />
 
                     <input 
-                        type="text"
+                        type="password"
                         name="password"
                         value={formValue.password}
                         placeholder="password"

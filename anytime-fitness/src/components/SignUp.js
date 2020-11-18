@@ -1,8 +1,9 @@
-import react, { useState } from 'react'
+import react, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 import Navbar from './Navbar'
 import imageS from '../images/signup.png'
+import { useHistory } from 'react-router-dom'
 
 const StyledSignUp = styled.div`
     form{
@@ -71,13 +72,21 @@ const initialFormValue = {
 
 const SignUp = () => {
 
+    useEffect(() => {
+        axios.get('https://anywherefitness1120.herokuapp.com/api/user')
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+    }, [])
+
+    const { push } = useHistory()
+
    
 
     const [formValue, setFormValue] = useState(initialFormValue)
 
     const changeHandler = e => {
         setFormValue({
-            ...initialFormValue,
+            ...formValue,
             [e.target.name]: e.target.value
         })
     }
@@ -85,7 +94,9 @@ const SignUp = () => {
     const submitHandler = e => {
         e.preventDefault()
         axios.post('https://anywherefitness1120.herokuapp.com/api/auth/signup', formValue)
-        .then(res => console.log(res))
+        .then(res => {
+            console.log(res)
+        })
         .catch(err => console.log(err))
     }
 
@@ -120,7 +131,7 @@ const SignUp = () => {
                 />
 
                 <input 
-                    type="text"
+                    type="password"
                     name="password"
                     value={formValue.password}
                     placeholder="password"

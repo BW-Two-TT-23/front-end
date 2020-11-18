@@ -14,14 +14,18 @@
   background: antiquewhite;
   
 }
+
 .App {
   text-align: center;
 }
+
 .topMargin{
   margin-top: 5rem;
   justify-content: center;
   text-align: center ;
 }
+
+
 .teamPhoto{
  
   border-radius: 100%;
@@ -30,20 +34,38 @@
   align-items: center;
   justify-content: center;
 }
+
+
 .teamPhotoBar{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   text-align: center;
+  margin-bottom: 4%
 
  
  
 }
+
+.container{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-top: 3%;
+}
+
 .navi{
 
-margin-right: .5rem;
-padding-right: .5rem;
+  margin-right: .5rem;
+  padding-right: .5rem;
+  width: 100%;
+  margin-bottom: 10%;
 }
+
+.navi a{
+  width: 100%;
+}
+
 
 .homeText1{
   display: flex;
@@ -83,8 +105,8 @@ padding-right: .5rem;
 
 .formWrap{
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
   align-items: center;
 }
 

@@ -7,6 +7,7 @@ import Login from './components/Login'
 import About from './components/About'
 import Home from './components/Home'
 import Tools from './components/Tools'
+
 import FitnessClass from './components/FitnessClass'
 
 function App() {

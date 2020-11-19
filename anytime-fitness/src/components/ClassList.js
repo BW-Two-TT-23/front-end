@@ -4,12 +4,26 @@ import axios from 'axios'
 import './ClassList.css'
 import { useHistory, useParams } from 'react-router-dom'
 
+
+const initialClass = {
+    name: "",
+    type: "",
+    starttime: "",
+    numberofattendees: "",
+    maxclasssize: "",
+    location: "",
+    intensitylevel: "",
+    duration: ""
+}
+
 const ClassList = () => {
 
     const { push } = useHistory()
     const { id } = useParams()
 
     const [classes, setClasses] = useState([])
+    const [editing, setEditing] = useState(false)
+    const [classToEdit, setClassToEdit] = useState(initialClass)
     
     useEffect(() => {
         axiosWithAuth().get('/api/classes')
@@ -35,6 +49,15 @@ const ClassList = () => {
         })
     }
 
+    // const updateClass = (item) => {
+    //     axiosWithAuth().put(`/api/classes/${item}`, classToEdit)
+    //     .then(res => {
+    //         console.log(res)
+    //         console.log(classes)
+    //     })
+    //     .catch(err => console.log(err))
+    // }
+
     const renderedClasses = classes.map(item => {
         return(
                 <div key={item.id} className="classlist-container">
@@ -49,7 +72,11 @@ const ClassList = () => {
                         <h4>Class Size: <span>{item.maxclasssize}</span></h4>
                     </div>
                     <div className="twobuttons">
-                        <button className="edit">Update</button>
+                        <button
+                            onClick={() => {
+                                push('/ClassUpdate')
+                            }}
+                            className="edit">Update</button>
                         <button
                             onClick={e => deleteClass(item.id)}
                             className="delete">Delete</button>

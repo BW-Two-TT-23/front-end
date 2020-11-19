@@ -10,6 +10,7 @@ import Home from './components/Home'
 import Tools from './components/Tools'
 import FitnessClass from './components/FitnessClass'
 import ClassList from './components/ClassList'
+import ClassUpdate from './components/ClassUpdate'
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/Tools" component={Tools} />
           <Route path="/FitnessClass" component={FitnessClass} />
           <Route path="/ClassList" component={ClassList}/>
+          <Route path="/ClassUpdate" component={ClassUpdate}/>
           <PrivateRoute/>
         </Switch>
         

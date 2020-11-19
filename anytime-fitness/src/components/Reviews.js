@@ -1,65 +1,61 @@
+import Navbar from "./Navbar";
+import imageMax from "../images/max500.png";
+import imagePH from "../images/placeholder.png";
 
-import Navbar from './Navbar'
-import imageMax from '../images/max500.png'
-import imagePH from '../images/placeholder.png'
-
-function Reviews(){
-    return(
-    
+function Reviews() {
+  return (
     <div>
-        <div className='rowC'><Navbar/></div>
-        
-        <div className='main'>
+      <div className="rowC">
+        <Navbar />
+      </div>
+
+      <div className="main">
         <div>
-        <h1 className='topMargin'>Check Out Our Reviews!</h1>
-        <p>Text Here</p>
+          <h1 className="topMargin">Read Our Reviews</h1>
+          <p>
+            AnyTime Fitness is transforming lives everywhere. Join our growing
+            community today!
+          </p>
         </div>
-        </div> 
-        {/* main */}
-        
+      </div>
+      {/* main */}
 
-        <div className='reviewBar'>
-            <div><img src={imageMax} className="teamPhoto" alt="Ma" />
+      <div className="reviewBars">
+        <div className="reviewBar">
+          <div>
+            <img src={imageMax} className="teamPhoto" alt="Ma" />
             <p>Max is devoted to UI/UX.</p>
-            </div>
+          </div>
 
-            <div>
+          <div>
             <img src={imagePH} className="reviewCard" alt="placeholder" />
             <p>coming soon</p>
-
-            </div>
-            <div>
+          </div>
+          <div>
             <img src={imagePH} className="reviewCard" alt="Placeholder" />
             <p>coming soon</p>
-
-            </div>
-        
-
+          </div>
         </div>
-        <div className='reviewBar'>
-            <div className="reviewCard">
-            <p>Text Here</p>
-            </div>
 
-            <div>
+        <div className="reviewBar">
+          <div>
+            <img src={imageMax} className="reviewCard" alt="placeholder" />
+            <p>coming soon</p>
+          </div>
+
+          <div>
             <img src={imagePH} className="reviewCard" alt="placeholder" />
             <p>coming soon</p>
-
-            </div>
-            <div>
-            <img src={imagePH} className="teamPhoto" alt="Placeholder" />
+          </div>
+          <div>
+            <img src={imagePH} className="reviewCard" alt="Placeholder" />
             <p>coming soon</p>
-
-            </div>
-        
-
+          </div>
         </div>
-        
-         
-    </div> 
+      </div>
+    </div>
     // last
-    );
-
+  );
 }
 
 export default Reviews;

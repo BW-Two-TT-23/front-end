@@ -2,11 +2,12 @@ import react, { useState, useEffect } from 'react'
 import { axiosWithAuth } from './utils/axiosWithAuth'
 import axios from 'axios'
 import './ClassList.css'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 
 const ClassList = () => {
 
     const { push } = useHistory()
+    const { id } = useParams()
 
     const [classes, setClasses] = useState([])
     
@@ -17,6 +18,17 @@ const ClassList = () => {
         }, [renderedClasses])
         .catch(err => console.log(err))
     })
+
+    const deleteClass = (itemId) => {
+        console.log(itemId)
+        axiosWithAuth().put(`/api/classes/${id}`)
+        .then(res => {
+            console.log(res)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
 
     const renderedClasses = classes.map(item => {
         return(
@@ -33,7 +45,9 @@ const ClassList = () => {
                     </div>
                     <div className="twobuttons">
                         <button className="edit">Update</button>
-                        <button className="delete">Delete</button>
+                        <button
+                            onClick={() => deleteClass(item.id)}
+                            className="delete">Delete</button>
                     </div>
                 </div>
         )

@@ -12,18 +12,23 @@ const ClassList = () => {
     const [classes, setClasses] = useState([])
     
     useEffect(() => {
-        axios.get('https://anywherefitness1120.herokuapp.com/api/classes')
+        axiosWithAuth().get('/api/classes')
         .then(res => {
             setClasses(res.data)
-        }, [renderedClasses])
+        })
         .catch(err => console.log(err))
-    })
+    },[])
 
-    const deleteClass = (itemId) => {
-        console.log(itemId)
-        axiosWithAuth().put(`/api/classes/${id}`)
+    const deleteClass = (item) => {
+        axiosWithAuth().delete(`/api/classes/${item}`)
         .then(res => {
+            console.log(classes)
             console.log(res)
+            const newClasses = classes.filter((oneClass) => {
+                console.log(oneClass)
+                return `${oneClass.id}` !== `${item}`
+            })
+            setClasses(newClasses)
         })
         .catch(err => {
             console.log(err)
@@ -46,13 +51,13 @@ const ClassList = () => {
                     <div className="twobuttons">
                         <button className="edit">Update</button>
                         <button
-                            onClick={() => deleteClass(item.id)}
+                            onClick={e => deleteClass(item.id)}
                             className="delete">Delete</button>
                     </div>
                 </div>
         )
     })
-    
+
     return(
         <div className="background">
             <div className="button">
@@ -65,7 +70,6 @@ const ClassList = () => {
             
             <h1>Classes</h1>
             <div className="classlist-big-container">
-                
                 {renderedClasses}
             </div>
         </div>

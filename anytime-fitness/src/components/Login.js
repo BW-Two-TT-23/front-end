@@ -84,7 +84,7 @@ const Login = () => {
         .then(res => {
             localStorage.setItem('token', res.data.token)
             console.log(res)
-            push('/FitnessClass')
+            push('/ClassList')
         })
         .catch(err => console.log(err))
     }

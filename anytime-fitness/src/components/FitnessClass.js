@@ -2,6 +2,7 @@ import axios from 'axios'
 import react, { useState, useEffect } from 'react'
 import './FitnessClass.css'
 import { axiosWithAuth } from './utils/axiosWithAuth'
+import { useHistory } from 'react-router-dom'
 
 const initialClass =
     {
@@ -13,11 +14,12 @@ const initialClass =
         location: "",
         numberofattendees: "",
         maxclasssize: "",
-        class_imageurl: ""
     }
 
 
 const FitnessClass = () => {
+
+    const { push } = useHistory()
 
     useEffect(() => {
         axios.get('https://anywherefitness1120.herokuapp.com/api/classes')
@@ -39,8 +41,8 @@ const FitnessClass = () => {
         // console.log(fitnessClass)
         axios.post('https://anywherefitness1120.herokuapp.com/api/classes', fitnessClass)
         .then(res => {
-            // setFitnessClass(initialClass)
-            console.log(res)
+            res.data.push(fitnessClass)
+            push('./ClassList')
         })
         .catch(err => console.log(err))
         
@@ -114,14 +116,7 @@ const FitnessClass = () => {
                     placeholder="CLASS SIZE"
                     onChange={changeHandler}       
                 />
-                <input 
-                    type="text"
-                    name="class_imageurl"
-                    id={Date.now()}
-                    placeholder="CLASS IMAGE URL"
-                    value={fitnessClass.class_imageurl}
-                    onChange={changeHandler}
-                />
+                
                 <button>Submit</button>
             </form>
         </div>

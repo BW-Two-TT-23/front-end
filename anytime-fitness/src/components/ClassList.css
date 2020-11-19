@@ -1,5 +1,66 @@
-classlist-container{
+.classlist-container{
     display: flex;
+    flex-flow: column;
     text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #008037;
+    width: 20%;
+    margin: 2% auto;
+    border-radius: 50%;
+    padding: 1%;
+}
+
+.classlist-big-container{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+h1{
+    text-align: center;
+}
+
+.class-name{
+    color: #F57386;
+    font-size: 1.6em;
+    text-align: center;
+}
+
+
+span{
+    color: #2F4F4F;
+    text-decoration: underline;
+}
+
+.button{
+    display: flex;
+    flex-flow: row-reverse;
+    margin: 1%;
+}
+
+button{
+    padding: 5px;
+    background-color: yellowgreen;
+    color: black;
+    text-decoration: none;
     border: 1px solid black;
+}
+
+
+.twobuttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.edit{
+    background-color: #ADD8E6;
+    margin: 2%;
+}
+
+.delete{
+    background-color: #CD5C5C;
+    margin: 2%;
 }

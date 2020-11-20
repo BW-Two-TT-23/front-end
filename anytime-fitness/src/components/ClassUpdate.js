@@ -1,67 +1,63 @@
-
-import axios from 'axios'
-import react, { useState, useEffect } from 'react'
-import './FitnessClass.css'
+import React, { useState, useEffect } from 'react'
 import { axiosWithAuth } from './utils/axiosWithAuth'
-import { useHistory } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
+import axios from 'axios'
 
-const initialClass =
-    {
-        name: "",
-        type: "",
-        starttime: "",
-        duration: "",
-        intensitylevel: "",
-        location: "",
-        numberofattendees: "",
-        maxclasssize: "",
-    }
+import './ClassUpdate.css'
 
 
 
-const FitnessClass = () => {
+const initialClass = {
+    name: "",
+    type: "",
+    starttime: "",
+    numberofattendees: "",
+    maxclasssize: "",
+    location: "",
+    intensitylevel: "",
+    duration: ""
+}
+
+const ClassUpdate = props => {
 
     const { push } = useHistory()
+    const { id } = useParams()
+    const [updateClass, setUpdateClass] = useState(initialClass)
 
     useEffect(() => {
-        axios.get('https://anywherefitness1120.herokuapp.com/api/classes')
-        .then(res => console.log(res))
+        axiosWithAuth().get(`api/classes/28`)
+        .then(res => {
+            setUpdateClass(res.data)
+        })
         .catch(err => console.log(err))
-    }, [])
-
-    const [fitnessClass, setFitnessClass] = useState(initialClass)
+    },[])
 
     const changeHandler = e => {
-        setFitnessClass({
-            ...fitnessClass,
+        setUpdateClass({
+            ...updateClass,
             [e.target.name]: e.target.value
         })
     }
 
-    const submitHandler = e => {
+    const submitHandler = (e, item) => {
         e.preventDefault()
-        // console.log(fitnessClass)
-        axios.post('https://anywherefitness1120.herokuapp.com/api/classes', fitnessClass)
+        axiosWithAuth().put(`/api/classes/${item}`, updateClass)
         .then(res => {
-            res.data.push(fitnessClass)
-            push('./ClassList')
+            console.log(updateClass)
+            setUpdateClass(updateClass)
+            push('/ClassList')
         })
         .catch(err => console.log(err))
-        
-        
     }
 
     return(
         <div className="class-container">
-
-            <h1 className="register-header">Register a Class</h1>
-
-  
+            <h2>Update Item</h2>
             <form onSubmit={submitHandler}>
                 <input 
                     type="text"
                     name="name"
-                    value={fitnessClass.name}    
+                    value={updateClass.name}    
                     placeholder="NAME"
                     onChange={changeHandler}       
                 />
@@ -69,7 +65,7 @@ const FitnessClass = () => {
                 <input 
                     type="text"
                     name="type"
-                    value={fitnessClass.type}    
+                    value={updateClass.type}    
                     placeholder="TYPE"
                     onChange={changeHandler}       
                 />
@@ -77,7 +73,7 @@ const FitnessClass = () => {
                 <input 
                     type="text"
                     name="starttime"
-                    value={fitnessClass.starttime}    
+                    value={updateClass.starttime}    
                     placeholder="START TIME"
                     onChange={changeHandler}       
                 />
@@ -85,7 +81,7 @@ const FitnessClass = () => {
                 <input 
                     type="text"
                     name="duration"
-                    value={fitnessClass.duration}    
+                    value={updateClass.duration}    
                     placeholder="DURATION"
                     onChange={changeHandler}       
                 />
@@ -93,7 +89,7 @@ const FitnessClass = () => {
                 <input 
                     type="number"
                     name="intensitylevel"
-                    value={fitnessClass.intensitylevel}    
+                    value={updateClass.intensitylevel}    
                     placeholder="INTENSITY LEVEL"
                     onChange={changeHandler}       
                 />
@@ -101,7 +97,7 @@ const FitnessClass = () => {
                 <input 
                     type="text"
                     name="location"
-                    value={fitnessClass.location}    
+                    value={updateClass.location}    
                     placeholder="LOCATION"
                     onChange={changeHandler}       
                 />
@@ -109,7 +105,7 @@ const FitnessClass = () => {
                 <input 
                     type="number"
                     name="numberofattendees"
-                    value={fitnessClass.numberofattendees}    
+                    value={updateClass.numberofattendees}    
                     placeholder="REGISTERED ATTENDEES"
                     onChange={changeHandler}       
                 />
@@ -117,16 +113,15 @@ const FitnessClass = () => {
                 <input 
                     type="number"
                     name="maxclasssize"
-                    value={fitnessClass.maxclasssize}    
+                    value={updateClass.maxclasssize}    
                     placeholder="CLASS SIZE"
                     onChange={changeHandler}       
                 />
                 
-                <button>Submit</button>
+                <button>Update</button>
             </form>
         </div>
     )
 }
 
-
-export default FitnessClass
+export default ClassUpdate

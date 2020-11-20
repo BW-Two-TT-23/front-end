@@ -11,6 +11,7 @@ import Tools from './components/Tools'
 import FitnessClass from './components/FitnessClass'
 
 import ClassList from './components/ClassList'
+import ClassUpdate from './components/ClassUpdate'
 
 import Reviews from './components/Reviews'
 
@@ -36,6 +37,9 @@ function App() {
           <Route path="/FitnessClass" component={FitnessClass} />
 
           <Route path="/ClassList" component={ClassList}/>
+
+          <Route path="/ClassUpdate" component={ClassUpdate}/>
+
 
           <Route path="/Reviews" component={Reviews} />
 

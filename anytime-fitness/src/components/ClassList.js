@@ -2,7 +2,9 @@ import react, { useState, useEffect } from 'react'
 import { axiosWithAuth } from './utils/axiosWithAuth'
 import axios from 'axios'
 import './ClassList.css'
-import { useHistory, useParams } from 'react-router-dom'
+import { Route, useHistory, useParams } from 'react-router-dom'
+import ClassUpdate from './ClassUpdate'
+
 
 
 const initialClass = {
@@ -74,13 +76,15 @@ const ClassList = () => {
                     <div className="twobuttons">
                         <button
                             onClick={() => {
-                                push('/ClassUpdate')
+                                push(`/ClassUpdate/${item.id}`)
+                                console.log(item.id)
                             }}
                             className="edit">Update</button>
                         <button
                             onClick={e => deleteClass(item.id)}
                             className="delete">Delete</button>
                     </div>
+                    
                 </div>
         )
     })
@@ -99,6 +103,9 @@ const ClassList = () => {
             <div className="classlist-big-container">
                 {renderedClasses}
             </div>
+            {/* <Route path="/ClassUpdate" render={(props) => (
+                        <ClassUpdate {...props} setClasses={setClasses} />
+                    )}/> */}
         </div>
     )
 }

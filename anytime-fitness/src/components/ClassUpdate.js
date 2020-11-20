@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { axiosWithAuth } from './utils/axiosWithAuth'
 import { useParams, useHistory } from 'react-router-dom'
+import axios from 'axios'
+
+import './ClassUpdate.css'
 
 
 
@@ -15,11 +18,19 @@ const initialClass = {
     duration: ""
 }
 
-const ClassUpdate = (props) => {
+const ClassUpdate = props => {
 
     const { push } = useHistory()
     const { id } = useParams()
     const [updateClass, setUpdateClass] = useState(initialClass)
+
+    useEffect(() => {
+        axiosWithAuth().get(`api/classes/28`)
+        .then(res => {
+            setUpdateClass(res.data)
+        })
+        .catch(err => console.log(err))
+    },[])
 
     const changeHandler = e => {
         setUpdateClass({
@@ -28,13 +39,19 @@ const ClassUpdate = (props) => {
         })
     }
 
-    const submitHandler = e => {
+    const submitHandler = (e, item) => {
         e.preventDefault()
-        axiosWithAuth().put()
+        axiosWithAuth().put(`/api/classes/${item}`, updateClass)
+        .then(res => {
+            console.log(updateClass)
+            setUpdateClass(updateClass)
+            push('/ClassList')
+        })
+        .catch(err => console.log(err))
     }
 
     return(
-        <div>
+        <div className="class-container">
             <h2>Update Item</h2>
             <form onSubmit={submitHandler}>
                 <input 

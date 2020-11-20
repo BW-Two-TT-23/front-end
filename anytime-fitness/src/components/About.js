@@ -36,7 +36,24 @@ function About(){
         
 
         </div>
+        <div className='teamPhotoBar'>
+            <div><img src={imageMax} className="teamPhoto" alt="Image of a blue haired web developer named Max" />
+            <p>Max is devoted to UI/UX.</p>
+            </div>
 
+            <div>
+            <img src={imagePH} className="teamPhoto" alt="placeholder" />
+            <p>coming soon</p>
+
+            </div>
+            <div>
+            <img src={imagePH} className="teamPhoto" alt="Placeholder" />
+            <p>coming soon</p>
+
+            </div>
+        
+
+        </div>
         
          
     </div> 

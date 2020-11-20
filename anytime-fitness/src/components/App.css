@@ -154,15 +154,15 @@ body{
 
 
 
-.box{
+/* .box{
   background: antiquewhite;
   border-radius: 5rem;
   color: violet;
   padding: 1rem;
-  /* box-shadow: 5px 10px 5px #888888; */
-  text-decoration: none;
-
-}
+  box-shadow: 5px 10px 5px #888888;
+ text-decoration: none; 
+ }
+  */
 .logo{
   border-radius: 5rem;
   height: 4rem;
@@ -178,16 +178,16 @@ display: flex;
 }
 
 
- .box2{
+ /* .box2{
   background: antiquewhite; 
   border-radius: 5rem;
   color: steelblue;
   padding: .5rem;
   margin: .5rem;
-  
   text-decoration: none;
 
-} 
+}  */
+
 .form-image{
   height: 20rem;
   border-radius: 25px;
@@ -218,7 +218,7 @@ header{
 }
 
 a:link {
-  box-shadow: 5px 10px 10px rgb(203, 233, 185);
+ box-shadow: 5px 10px 10px rgb(203, 233, 185);
   text-decoration: none;
   border: solid .1rem antiquewhite;
 }
@@ -247,7 +247,7 @@ a:active {
   text-decoration: none;
   border: solid .1rem antiquewhite;
   color: violet;
-}
+} 
 
 @keyframes App-logo-spin {
   from {
